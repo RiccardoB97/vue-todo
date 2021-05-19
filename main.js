@@ -17,7 +17,7 @@ const app = new Vue({
         // Add a task on the todo list
         addTask() {
             if (this.newTask.length > 4) {
-                return this.tasks.push(this.newTask);
+                return this.tasks.push(this.newTask), this.newTask = ''
             }
             return alert('You must insert at least 4 characters')
         },
