@@ -46,7 +46,7 @@
             </div>
             <!-- Shown only when there s at least 1 task deleted -->
             <div class="tasks bin" v-if="deletedTasks.length > 0">
-                <h3>Bin</h3> <a href="" @click="emptyBin(deletedTasks)">(Empty Bin)</a>
+                <h3>Bin</h3> <a href="#" @click="emptyBin(deletedTasks)">(Empty Bin)</a>
                 <br>
                 <div class="task" v-for="(task, index) in deletedTasks">
                     {{task}} <i class="fas fa-redo" @click="redoDeletedTask(task, index)"></i>

@@ -17,6 +17,15 @@ body{
     justify-content: center;
     background-color: #FF9B54;
 }
+#app input{
+    border:2px solid #e44332;
+    border-radius:4px;
+    padding: 4px;
+    background-color: #f28639;
+}
+#app input::placeholder{
+    color: white
+}
 
 .logo{
     height: 80px;

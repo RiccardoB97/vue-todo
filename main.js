@@ -11,6 +11,7 @@ const app = new Vue({
         ],
         completedTasks: [],
         deletedTasks: [],
+        userChoice: '',
     },
     methods: {
         // Add a task on the todo list
@@ -42,11 +43,11 @@ const app = new Vue({
         },
         // Empties the bin, deleting completely all the elements inside
         emptyBin(list) {
-            var userChoise = prompt('This will delete all your binned tasks forever, are you sure to continue? (Y/N)')
-            if (userChoise === 'N') {
+            userChoice = prompt('This will delete all your binned tasks forever, are you sure to continue? (Y/N)')
+            if (userChoice === 'N') {
                 return alert('Your bin has not been cancelled'), list
-            } else if (userChoise === 'Y')
-                return list = [], alert('Your bin has been emptied successfully')
+            } else if (userChoice === 'Y')
+                return this.deletedTasks = [], alert('Your bin has been emptied successfully')
         }
 
     },
