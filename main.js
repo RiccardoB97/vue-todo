@@ -14,7 +14,10 @@ const app = new Vue({
     },
     methods: {
         addTask() {
-            this.tasks.push(this.newTask);
+            if (this.newTask.length > 4) {
+                return this.tasks.push(this.newTask);
+            }
+            return alert('You must insert at least 4 characters')
         },
         removeTask(el, index) {
             this.tasks.splice(index, 1);
@@ -31,6 +34,14 @@ const app = new Vue({
         redoDeletedTask(el, index) {
             this.deletedTasks.splice(index, 1)
             this.tasks.push(el)
+        },
+        emptyBin(list) {
+            var userChoise = prompt('This will delete all your binned tasks forever, are you sure to continue? (Y/N)')
+            if (userChoise === 'N') {
+                console.log(list);
+                return alert('Your bin has not been cancelled'), list
+            } else if (userChoise === 'Y')
+                return list = [], alert('Your bin has been emptied successfully')
         }
 
     },

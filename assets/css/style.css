@@ -42,8 +42,17 @@ body{
 .tasks .task{
     padding: 5px 0;
 }
-
 .tasks .task i:hover{
     opacity: 75%;
     cursor: pointer;
+}
+.tasks.bin h3{
+    display: inline-block;
+    margin: 0 5px;
+}
+.tasks.bin a{
+    color: white;
+}
+.tasks.bin a:hover{
+    opacity:75%;
 }

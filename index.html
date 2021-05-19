@@ -30,11 +30,13 @@
                     <i class="far fa-times-circle" @click="removeTask(task, index)"></i>
                 </div>
             </div>
+            <!-- Shown only when there s no tasks left -->
             <div class="tasks" v-else>
                 <div class="task">
                     <h3>You have nothing left to do!</h3>
                 </div>
             </div>
+            <!-- Shown only when there s at least 1 task completed -->
             <div class="tasks completed" v-if="completedTasks.length > 0">
                 <h3>Completed:</h3>
                 <br>
@@ -42,8 +44,9 @@
                     {{task}} <i class="fas fa-redo" @click="redoTask(task, index)"></i>
                 </div>
             </div>
+            <!-- Shown only when there s at least 1 task deleted -->
             <div class="tasks bin" v-if="deletedTasks.length > 0">
-                <h3>Bin</h3>
+                <h3>Bin</h3> <a href="" @click="emptyBin(deletedTasks)">(Empty Bin)</a>
                 <br>
                 <div class="task" v-for="(task, index) in deletedTasks">
                     {{task}} <i class="fas fa-redo" @click="redoDeletedTask(task, index)"></i>
