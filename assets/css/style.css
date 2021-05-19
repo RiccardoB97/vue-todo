@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family:arial;
+    font-size: 16px;
+}
+
+#app{
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #FF9B54;
+}
+
+.logo{
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+.tasks{
+    background-color:#e44332;
+    min-height: 200px;
+    width: 250px;
+    color: white;
+    padding: 15px;
+    margin-top: 20px;
+    text-align: center;
+}
+.tasks .task{
+    padding: 5px 0;
+}
+
+.tasks .task i:hover{
+    opacity: 75%;
+    cursor: pointer;
+}
