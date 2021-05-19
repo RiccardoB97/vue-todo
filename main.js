@@ -16,8 +16,9 @@ const app = new Vue({
         addTask() {
             this.tasks.push(this.newTask);
         },
-        removeTask(index) {
+        removeTask(el, index) {
             this.tasks.splice(index, 1);
+            this.deletedTasks.push(el)
         },
         completedTask(el, index) {
             this.completedTasks.push(el)
@@ -25,6 +26,10 @@ const app = new Vue({
         },
         redoTask(el, index) {
             this.completedTasks.splice(index, 1)
+            this.tasks.push(el)
+        },
+        redoDeletedTask(el, index) {
+            this.deletedTasks.splice(index, 1)
             this.tasks.push(el)
         }
 

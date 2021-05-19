@@ -20,14 +20,14 @@
         </div>
         <div class="tasks_wrapper">
             <div class="tasks" v-if="(tasks.length > 0)">
-                <h3>Here's a list of your tasks:</h3>
+                <h3>Todo list:</h3>
                 <br>
                 <div class="task" v-for="(task, index) in tasks">
                     {{task}}
                     <!-- Completed task -->
                     <i class="far fa-check-circle" @click="completedTask(task, index)"></i>
                     <!-- Delete task -->
-                    <i class="far fa-times-circle" @click="removeTask(index)"></i>
+                    <i class="far fa-times-circle" @click="removeTask(task, index)"></i>
                 </div>
             </div>
             <div class="tasks" v-else>
@@ -36,10 +36,17 @@
                 </div>
             </div>
             <div class="tasks completed" v-if="completedTasks.length > 0">
-                <h3>Here's a list of your completed tasks:</h3>
+                <h3>Completed:</h3>
                 <br>
                 <div class="task" v-for="(task, index) in completedTasks">
                     {{task}} <i class="fas fa-redo" @click="redoTask(task, index)"></i>
+                </div>
+            </div>
+            <div class="tasks bin" v-if="deletedTasks.length > 0">
+                <h3>Bin</h3>
+                <br>
+                <div class="task" v-for="(task, index) in deletedTasks">
+                    {{task}} <i class="fas fa-redo" @click="redoDeletedTask(task, index)"></i>
                 </div>
             </div>
         </div>
