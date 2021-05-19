@@ -6,7 +6,7 @@
 
 body{
     font-family:arial;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 #app{
@@ -23,14 +23,21 @@ body{
     margin-bottom: 15px;
 }
 
+.tasks_wrapper{
+    display: flex;
+    flex-direction: row;
+}
+
 .tasks{
     background-color:#e44332;
     min-height: 200px;
     width: 250px;
     color: white;
     padding: 15px;
-    margin-top: 20px;
+    margin: 20px 10px;
     text-align: center;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px #ba3728;
 }
 .tasks .task{
     padding: 5px 0;

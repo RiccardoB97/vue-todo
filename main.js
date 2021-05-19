@@ -10,6 +10,7 @@ const app = new Vue({
 
         ],
         completedTasks: [],
+        deletedTasks: [],
     },
     methods: {
         addTask() {
@@ -21,7 +22,10 @@ const app = new Vue({
         completedTask(el, index) {
             this.completedTasks.push(el)
             this.tasks.splice(index, 1);
-            console.log(this.completedTasks);
+        },
+        redoTask(el, index) {
+            this.completedTasks.splice(index, 1)
+            this.tasks.push(el)
         }
 
     },

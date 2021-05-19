@@ -18,18 +18,29 @@
             <input type="text" v-model="newTask" placeholder="Add a new task">
             <button @click='addTask'>Add Task</button>
         </div>
-        <div class="tasks" v-if="(tasks.length > 0)">
-            <div class="task" v-for="(task, index) in tasks">
-                {{task}}
-                <!-- Completed task -->
-                <i class="far fa-check-circle" @click="completedTask(task, index)"></i>
-                <!-- Delete task -->
-                <i class="far fa-times-circle" @click="removeTask(index)"></i>
+        <div class="tasks_wrapper">
+            <div class="tasks" v-if="(tasks.length > 0)">
+                <h3>Here's a list of your tasks:</h3>
+                <br>
+                <div class="task" v-for="(task, index) in tasks">
+                    {{task}}
+                    <!-- Completed task -->
+                    <i class="far fa-check-circle" @click="completedTask(task, index)"></i>
+                    <!-- Delete task -->
+                    <i class="far fa-times-circle" @click="removeTask(index)"></i>
+                </div>
             </div>
-        </div>
-        <div class="tasks" v-else>
-            <div class="task">
-                You have nothing left to do!
+            <div class="tasks" v-else>
+                <div class="task">
+                    <h3>You have nothing left to do!</h3>
+                </div>
+            </div>
+            <div class="tasks completed" v-if="completedTasks.length > 0">
+                <h3>Here's a list of your completed tasks:</h3>
+                <br>
+                <div class="task" v-for="(task, index) in completedTasks">
+                    {{task}} <i class="fas fa-redo" @click="redoTask(task, index)"></i>
+                </div>
             </div>
         </div>
 
