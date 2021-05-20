@@ -15,7 +15,7 @@
     <div id="app">
         <img class='logo' :src="logo" alt="">
         <div class="add_task">
-            <input type="text" v-model="newTask" placeholder="Add a new task">
+            <input type="text" v-model="newTask" placeholder="Add a new task" @keyup.enter="addTask">
             <button @click='addTask'>Add Task</button>
         </div>
         <div class="tasks_wrapper">
