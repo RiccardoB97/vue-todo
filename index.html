@@ -23,7 +23,7 @@
                 <h3>Todo list:</h3>
                 <br>
                 <div class="task" v-for="(task, index) in tasks">
-                    {{task}}
+                    <input type="text" v-model="tasks[index]" @keyup.enter='updateTask'>
                     <!-- Completed task -->
                     <i class="far fa-check-circle" @click="completedTask(task, index)"></i>
                     <!-- Delete task -->

@@ -48,6 +48,9 @@ const app = new Vue({
                 return alert('Your bin has not been cancelled'), list
             } else if (userChoice === 'Y')
                 return this.deletedTasks = [], alert('Your bin has been emptied successfully')
+        },
+        updateTask() {
+            alert('Your task has been updated successfully')
         }
 
     },
